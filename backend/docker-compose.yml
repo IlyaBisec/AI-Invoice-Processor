@@ -1,0 +1,28 @@
+# Docker Compose configuration
+# Defines API + Database services
+# 18.05.2026 (c) ilya_bisec
+
+name: ai_invoice_processor
+
+services:
+  aip_app:
+    build: .
+    container_name: aip_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    depends_on:
+      - database
+
+  database:
+    image: postgres:16
+    container_name: database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: invoices
+    ports:
+      - "5432:5432"
