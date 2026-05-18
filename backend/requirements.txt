@@ -1,0 +1,14 @@
+# Python dependencies
+# 18.05.2026 (c) ilya_bisec
+
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+python-dotenv
+python-multipart
+openai
+pdfplumber
+pydantic
+alembic
+pandas
